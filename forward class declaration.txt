@@ -1,0 +1,36 @@
+// Simple declaration
+class Machine;
+
+// Now write your other classes
+class Instruction {
+    // blablabla
+};
+
+// Other classes here
+class Machine {
+    // blablabla
+};
+
+You classes depend on each other so since one is not defined at the time the other is referencing it, the error shows up. For above code, the Instruction class needs to know about the Machine class before using it.
+
+Use forward declaration for Machine class like below:
+
+ 
+
+class Machine;
+
+Class Instruction{
+
+     void  func(Machine TM);
+
+ 
+
+}
+
+ 
+
+class Machine{  
+
+    vector<Instruction*> List;
+
+}
